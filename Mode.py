@@ -44,8 +44,8 @@ for weight,occurrence in data.items():
     elif 165<float(weight)<175:
         modeDataForRange["165-175"]+=occurrence
 modeRange,modeOccurence=0,0
-for range in modeDataForRange.items():
+for range,occurrence in modeDataForRange.items():
     if occurrence>modeOccurence:
-        modeRange,modeOccurence-[int(range.split("-")[0]),int(range.split("-")[1])],occurrence
+        modeRange,modeOccurence=[int(range.split("-")[0]),int(range.split("-")[1])],occurrence
 mode=float((modeRange[0]+modeRange[1])/2)
 print (mode)
